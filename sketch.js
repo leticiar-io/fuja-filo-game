@@ -30,11 +30,6 @@ function draw() {
   capivara(gameStart);
   colisoes();
 
-  tempo += 0.05;
-
-  console.log("d - ", d);
-  console.log("");
-
   if (gameStart == 3) {
     image(tela1, 0, 0, width, height);
 
@@ -75,10 +70,7 @@ function draw() {
     rect(50, 42, 254, 52);
 
     fill("#F3AAB9");
-
-    textSize(15);
-    text(`Obs: O primeiro obstaculo nao conta na pt!`, width / 2 - 20, 320);
-
+    
     if (
       mouseIsPressed &&
       mouseX > 50 &&
@@ -93,6 +85,7 @@ function draw() {
 
 function elementos() {
   if (gameStart == 1) {
+    tempo += 0.05;
     d = MRUV(v, ac, tempo);
 
     tempoGame++;
